@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Test</title>
+	<link rel="stylesheet" href="css/libs.min.css">
+	<link rel="stylesheet" href="css/main.min.css">
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap-grid.css">
+</head>
+<body>
+	<div id="content" class="col-12" style="background-image: url('img/23feb/фон.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+		<div class="col-2"></div>
+		<div class="center  col-8" v-if="isStart" >
+			<div class="start-page">
+				<div class="test-text">Тест:</div>
+				<h1>Какой гаджет поздравит тебя с 23 февраля?</h1>
+				<button class="start-button" v-on:click="startTest">Начать</button>
+				<div class="logo">
+					<img src="img/23feb/ит компания крок.png" alt="" class="img-answer col-2">
+				</div>
+			</div>
+		</div>
+		<div class="center start col-8" style="background-image: url('img/23feb/file.png'); background-size: cover; background-repeat: no-repeat; background-position: center;" v-show="!isStart">
+			<div class="answers-wrap">
+				<div class="answer-without-group" v-if="!goodActive && !answerGroupText.isActive">
+					<div id="answer" v-for="text in answerText" v-if="text.isActive">
+					<div class="answer-text-h1">{{text.text}}</div>
+					</div>
+					<div class="answers col-lg-6" v-for='answer in answers' v-if="answer.isActive" v-on:click="getAnswer(answer.value, answer)">
+						<div class="answer-item">
+							<div class="answer-img-wrapper">
+								<img :src="answer.img" class="img-answer"></img>
+							</div>
+							<div class="answer-text">{{answer.text}}</div>
+						</div>
+					</div>
+				</div>
+				<div class="answer-with-group" v-if="answerGroupText.isActive">
+					<div class="answer-text-h1 answers-group">
+					<div id="answer-2" class="answer-group-text">{{answerGroupText.text}}</div>
+					</div>
+					<div id="answerGood" class="answers-good answers col-lg-6 col-sm-12" onClick="yaCounter52512361.reachGoal('getGood'); return true;" v-for='answerGroup in answersGroups' v-if="answerGroup.isActive" v-on:click="getGood(answerGroup)">
+						<div class="answer-item" >
+							<div class="answer-img-wrapper col-12">
+								<img :src="answerGroup.img" class="img-answer"></img>
+							</div>
+							<div class="answer-text">{{answerGroup.text}}</div>
+						</div>
+					</div>
+				</div>
+				<div class="answer-with-group" v-if="goodActive" v-for='g in good'>
+					<div class="good-wrapp" v-if="g.isActive">
+						<div class="answer-text-h1 answers-group" >
+						<div id="answer-2" class="answer-group-text">{{g.headerText}}</div>
+						</div>
+						<div class="goods col-lg-6 col-sm-12" v-if="g.isActive">
+							<div class="answer-item">
+								<div class="answer-img">
+									<img :src="g.img" class="img-answer"></img>
+								</div>
+								<div class="goods-text">{{g.text}}</div>
+								<button class="start-button" v-on:click="startAgain(g)">Начать заново</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nav-answers" v-if="!goodActive">
+					<div class="dots" v-for="dot in dots">
+						<div class="items not-active" v-if="!dot.isActive"></div>
+						<div class="items active" v-if="dot.isActive"></div>
+					</div>
+				</div>
+				<div id="share-block" v-if="goodActive">
+					<p>Не забудь поздравить друзей, коллег,</p>
+					<p>которые работают в IT.</p>
+					<p>Поделись результатом теста в соцсетях!</p>
+				</div>
+				<div class="likely likely-big" v-show="goodActive">
+					  <div class="facebook" data-title="Узнай какой гаджет поздравит тебя с 23 февраля. 
+						CROC Inc рекомендует)" data-url="http://croctest.site/"></div>
+											  <div class="vkontakte" data-title="Узнай какой гаджет поздравит тебя с 23 февраля. 
+						CROC Inc рекомендует)" data-url="http://croctest.site/"></div>
+				</div>
+			</div>
+		</div>
+		<div class="col-2"></div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="libs/likely/likely.js"></script>
+	<script src="js/libs.min.js"></script>
+	<script src="js/common.js"></script>
+	<!-- <script src="js/metrica.js"></script> -->
+</body>
+</html>

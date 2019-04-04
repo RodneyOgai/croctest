@@ -1,0 +1,58 @@
+{
+  "_from": "@cookieseater/vue-yandex-share@^0.2.1",
+  "_id": "@cookieseater/vue-yandex-share@0.2.1",
+  "_inBundle": false,
+  "_integrity": "sha512-t0XCqEopW6hUtooAtlAoZQTUMbXXIrmlytQeemsu1Qhy8qg/7d25Mu7r2NWHdecgG5sI2TSZxkqHH27G35uo4w==",
+  "_location": "/@cookieseater/vue-yandex-share",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@cookieseater/vue-yandex-share@^0.2.1",
+    "name": "@cookieseater/vue-yandex-share",
+    "escapedName": "@cookieseater%2fvue-yandex-share",
+    "scope": "@cookieseater",
+    "rawSpec": "^0.2.1",
+    "saveSpec": null,
+    "fetchSpec": "^0.2.1"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@cookieseater/vue-yandex-share/-/vue-yandex-share-0.2.1.tgz",
+  "_shasum": "18c70c8ae9f213415d77a0bf3cff5edd7cebd286",
+  "_spec": "@cookieseater/vue-yandex-share@^0.2.1",
+  "_where": "C:\\Users\\radis\\OneDrive\\Рабочий стол\\gulp-lesson-master\\gulp-lesson-master\\app",
+  "author": {
+    "name": "Alexey Shishkov",
+    "email": "cookies.eater.03@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/CookiesEater/vue-yandex-share/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Vue component for Yandex Share service",
+  "devDependencies": {
+    "bili": "^3.1.2",
+    "eslint": "^5.0.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0"
+  },
+  "homepage": "https://github.com/CookiesEater/vue-yandex-share#readme",
+  "license": "MIT",
+  "main": "dist/vue-yandex-share.js",
+  "module": "src/YandexShare.js",
+  "name": "@cookieseater/vue-yandex-share",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CookiesEater/vue-yandex-share.git"
+  },
+  "scripts": {
+    "build": "npm run lint && bili",
+    "lint": "eslint ./src",
+    "prepublishOnly": "npm run build"
+  },
+  "version": "0.2.1"
+}
